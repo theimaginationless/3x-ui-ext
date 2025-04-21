@@ -1579,6 +1579,14 @@ class Inbound extends XrayCommonClass {
         txt += `PrivateKey = ${this.settings.peers[peerId].privateKey}\n`
         txt += `Address = ${this.settings.peers[peerId].allowedIPs[0]}\n`
         txt += `DNS = 1.1.1.1, 1.0.0.1\n`
+        txt += `Jmin = 50\n`
+        txt += `Jmax = 1000\n`
+        txt += `S1 = 45\n`
+        txt += `S2 = 106\n`
+        txt += `H1 = 812496118\n`
+        txt += `H2 = 749575829\n`
+        txt += `H3 = 656990840\n`
+        txt += `H4 = 1060368489\n`
         if (this.settings.mtu) {
             txt += `MTU = ${this.settings.mtu}\n`
         }
@@ -1593,6 +1601,8 @@ class Inbound extends XrayCommonClass {
         if (this.settings.peers[peerId].keepAlive) {
             txt += `\nPersistentKeepalive = ${this.settings.peers[peerId].keepAlive}\n`
         }
+
+
         return txt;
     }
 
